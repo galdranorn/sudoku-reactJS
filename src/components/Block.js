@@ -5,12 +5,13 @@ import Tile from './Tile';
 let tileData = [];
 
 for (let i=1; i<=9; i++) {
+    let ind = [0, 1, 4, 7, 28, 31, 34, 55, 58, 61]
     let blockClass = {
         class: 'block'+i,
         idList: {
-            row1: [i, i+1, i+2], 
-            row2: [i+9, i+10, i+11], 
-            row3: [i+18, i+19, i+20]
+            row1: [ind[i], ind[i]+1, ind[i]+2], 
+            row2: [ind[i]+9, ind[i]+10, ind[i]+11], 
+            row3: [ind[i]+18, ind[i]+19, ind[i]+20]
         }
     }
     tileData.push(blockClass);
