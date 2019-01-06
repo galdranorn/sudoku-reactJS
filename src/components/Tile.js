@@ -3,7 +3,14 @@ import style from './Tile.css';
 
 const Tile = (props) => {
     return (
-        <div className={style.Tile}>{props.number}</div>
+        <input
+            id = {props.id}
+            type="number"
+            className={style.Tile}
+            min="1"
+            max="9"
+            placeholder="0">
+        </input>
     )
 }
 

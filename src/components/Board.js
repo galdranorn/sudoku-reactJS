@@ -1,14 +1,11 @@
 import React from 'react';
 import style from './Board.css';
-import Tile from './Tile';
+import Block from './Block';
 
 const Board = () => {
+
     return (
-        <div className={style.Board}>
-            <Tile number="3"/>
-            <Tile number="2"/>
-            <Tile number="8"/>
-        </div>
+        <Block block="3"/>
     )
 }
 
