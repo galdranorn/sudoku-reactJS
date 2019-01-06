@@ -4,7 +4,7 @@ import style from './Tile.css';
 const Tile = (props) => {
     return (
         <input
-            id = {props.id}
+            id={props.id}
             type="number"
             className={style.Tile}
             min="1"
