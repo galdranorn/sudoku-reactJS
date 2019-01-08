@@ -1,9 +1,73 @@
 .App {
+    font-family: 'Open Sans';
     width: 100%;
     height: 100%;
     text-align: center;
 }
 
-.Check {
-    background: green;
+.App h1 {
+    font-size: 3em;
 }
+
+.ButtonsUp button, .ButtonsDown button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: rgba(255,255,255,0.9);
+}
+
+.ButtonsDown button {
+    font-size: 1.5em;
+}
+
+.ButtonsUp .NewGame {
+    font-size: 2em;
+}
+
+.ButtonsUp {}
+.NewGame {}
+.Easy{}
+.Medium{}
+.Hard{}
+.Buttons{}
+.Check {}
+.Solve {}
+.Restart{}
+
+.Board {
+    width: 670px;
+    min-width: 300px;
+    max-width: 800px;
+    margin: 20px auto;
+    display: block; 
+}
+
+.Board input {
+    width: 70px;
+    height: 60px;
+    display: inline-block;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.Board input:nth-child(3n):not(:nth-child(9n)){
+    border-right: 3px solid #000;
+}
+.Board input:nth-child(n+19):nth-child(-n+27) {
+    border-bottom: 3px solid #000;
+}  
+.Board input:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 3px solid #000;
+}
+  
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+

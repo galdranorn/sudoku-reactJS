@@ -61,12 +61,14 @@ class App extends React.Component {
         return (
             <div className={styles.App}>
                 <h1>Sudoku</h1>
-                <button className={styles.NewGame} onClick={()=>{this.setState({buttonsVisible: true})}}>New game</button>
-                
-                <div style={{display: (this.state.buttonsVisible) ? 'block' : 'none'}}>
-                    <button className={styles.Easy} onClick={()=>(this.newBoard('easy'))}>Easy</button>
-                    <button className={styles.Medium} onClick={()=>(this.newBoard('medium'))}>Medium</button>
-                    <button className={styles.Hard} onClick={()=>(this.newBoard('hard'))}>Hard</button>
+
+                <div className={styles.ButtonsUp}>
+                    <button className={styles.NewGame} onClick={()=>{this.setState({buttonsVisible: true})}}>New game</button>
+                    <div style={{display: (this.state.buttonsVisible) ? 'block' : 'none'}}>
+                        <button className={styles.Easy} onClick={()=>(this.newBoard('easy'))}>Easy</button>
+                        <button className={styles.Medium} onClick={()=>(this.newBoard('medium'))}>Medium</button>
+                        <button className={styles.Hard} onClick={()=>(this.newBoard('hard'))}>Hard</button>
+                    </div>
                 </div>
                 
                 <div className={styles.Board}>
@@ -80,10 +82,16 @@ class App extends React.Component {
                     })}
                 </div>
                 
-                <div className={styles.Buttons}>
-                    <button className={styles.Check} onClick={()=>this.check()}>Check</button>
-                    <button className={styles.Solve} onClick={()=>this.solve()}>Solve</button>
-                    <button className={styles.Restart} onClick={()=>this.restart()}>Restart</button>
+                <div className={styles.ButtonsDown}>
+                    <button className={styles.Check} onClick={()=>this.check()}>
+                        Check <span className="fas fa-question"></span>
+                    </button>
+                    <button className={styles.Solve} onClick={()=>this.solve()}>
+                        Solve <span className="fas fa-check"></span>
+                    </button>
+                    <button className={styles.Restart} onClick={()=>this.restart()}>
+                        Restart <span className="fas fa-sync"></span>
+                    </button>
                 </div>
             </div>
         );
