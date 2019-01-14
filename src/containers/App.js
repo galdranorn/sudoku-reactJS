@@ -31,8 +31,6 @@ class App extends React.Component {
                 board: temporaryBoard.join(""),
                 buttonsVisible: false
             })
-            console.log(this.state.board)
-            console.log(temporaryBoard)
         }
         else {
             return false;
@@ -49,15 +47,21 @@ class App extends React.Component {
     check() {
         let sudokuSolve = sudoku.solve(this.state.board);
         if (this.state.board == sudokuSolve) {
-            console.log("OK")
+            alert("Congratulations! You solved the sudoku!")
         }
         else {
-            console.log("NOK")
+            alert("Sorry but something went wrong :-( Try again")
         }
     }
 
     solve() {
-        let sudokuSolve = sudoku.solve(this.state.board);
+        let sudokuSolve;
+        if (sudoku.solve(this.state.board)==false) {
+            sudokuSolve = sudoku.solve(this.state.initialBoard);
+        }
+        else {
+            sudokuSolve = sudoku.solve(this.state.board);
+        }
         this.setState({
             board: sudokuSolve
         })
